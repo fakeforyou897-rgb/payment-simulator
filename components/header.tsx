@@ -84,7 +84,7 @@ export function Header() {
             aria-label="Switch to dark mode"
             disabled={!isMounted}
             onClick={() => setTheme('dark')}
-            className={cn("w-8 h-8 rounded-full flex items-center justify-center transition-colors [&_svg]:w-4 [&_svg]:h-4", resolvedTheme === 'dark' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground")}
+            className={cn("w-8 h-8 rounded-full flex items-center justify-center transition-colors [&_svg]:w-4 [&_svg]:h-4", isMounted && resolvedTheme === 'dark' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground")}
           >
             <Moon />
           </button>
@@ -93,7 +93,7 @@ export function Header() {
             aria-label="Switch to light mode"
             disabled={!isMounted}
             onClick={() => setTheme('light')}
-            className={cn("w-8 h-8 rounded-full flex items-center justify-center transition-colors [&_svg]:w-4 [&_svg]:h-4", resolvedTheme === 'light' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground")}
+            className={cn("w-8 h-8 rounded-full flex items-center justify-center transition-colors [&_svg]:w-4 [&_svg]:h-4", isMounted && resolvedTheme === 'light' ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground")}
           >
             <Sun />
           </button>
